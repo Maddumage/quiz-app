@@ -1,3 +1,4 @@
+const { connectToDb } = require("../db/connection");
 const Quiz = require("../models/quizModel");
 
 // Create a new quiz
