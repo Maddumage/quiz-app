@@ -1,12 +1,10 @@
-# quiz-app
+# Full Stack Quiz Application
 
-Full Stack Quiz Application
-This repository contains the backend and frontend code for a quiz application. The project is structured with a Node.js and MongoDB-based backend API and a React.js frontend for the user interface, all managed within a single repository.
+**This repository contains the backend and frontend code for a quiz application. The project is structured with a Node.js and MongoDB-based backend API and a React.js frontend for the user interface, all managed within a single repository.**
 
-Project Structure
-php
-Copy code
-.
+## Project Structure
+
+```
 ├── backend/ # Node.js backend (Express, MongoDB)
 │ ├── src/ # Source code for backend
 │ │ ├── config/ # Database configuration
@@ -25,67 +23,60 @@ Copy code
 │ └── package.json # Frontend dependencies and scripts
 │
 └── README.md # Project documentation
-Getting Started
-To get the application running locally, you need to set up both the backend and frontend environments.
+```
 
-Prerequisites
+## Getting Started
+
+**To run the application locally, you must set up both the backend and frontend environments.**
+
+## Prerequisites
+
 Node.js (>= v14.0.0)
 MongoDB (locally or using MongoDB Atlas)
 NPM (Node Package Manager)
 
-1. Clone the Repository
-   bash
-   Copy code
-   git clone https://github.com/your-repo/fullstack-quiz-app.git
-   cd fullstack-quiz-app
-2. Backend Setup
-   Navigate to the backend folder:
+- 1. Clone the Repository
+     bash
+     Copy code
+     git clone https://github.com/your-repo/fullstack-quiz-app.git
+     cd fullstack-quiz-app
+- 2. Backend Setup
+     Navigate to the backend folder:
 
-bash
-Copy code
-cd backend
-Install the dependencies:
+`cd backend`
+**Install the dependencies:**
 
-bash
-Copy code
-npm install
-Create a .env file in the backend folder and add the following environment variables:
+`npm install`
+**Create a .env file in the backend folder and add the following environment variables:**
 
-bash
-Copy code
-PORT=5000
-MONGO_URI=mongodb://localhost:27017/quizapp
-Run the backend server:
+````PORT=5000
+MONGO_URI=mongodb://localhost:27017/quizapp```
 
-bash
-Copy code
+##Run the backend server:
+
 npm start
 The backend server should now be running on http://localhost:5000.
 
 3. Frontend Setup
    Navigate to the frontend folder:
 
-bash
-Copy code
-cd ../frontend
-Install the dependencies:
+```cd ../frontend```
 
-bash
-Copy code
-npm install
-Update the backend API URL in frontend/src/config.js (if needed):
+## Install the dependencies:
+```npm install```
 
-js
-Copy code
-export const API_URL = 'http://localhost:5000/api';
-Start the React application:
+**Update the backend API URL in frontend/src/config.js (if needed):**
 
-bash
-Copy code
-npm start
-The frontend should now be running on http://localhost:3000.
+```export const API_URL = 'http://localhost:5000/api';```
 
-Running Both Applications
+## Start the React application:
+
+```npm start```
+
+**The frontend should now be running on http://localhost:3000.**
+
+## Running Both Applications
+
 You can run both the backend and frontend simultaneously using two separate terminal windows:
 
 In the first terminal, navigate to the backend folder and run:
@@ -121,3 +112,4 @@ Feel free to fork this repository and submit pull requests if you'd like to cont
 
 License
 This project is licensed under the MIT License.
+````
