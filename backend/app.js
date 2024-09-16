@@ -3,14 +3,35 @@ const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
 const connectDB = require("./src/db/connection");
 const quizRoutes = require("./src/routes/quizRoutes");
+const cors = require("cors");
+const mongoose = require("mongoose");
 
 dotenv.config();
 
 async function main() {
   await connectDB();
 
+  let db = mongoose.connection;
+  db.on("connected", () => console.log("Db Connceted"));
+
+  db.on("error", console.error.bind(console, "MongoDB connection error:"));
+
   const app = express();
-  app.use(bodyParser.json());
+  app.use(
+    bodyParser.urlencoded({
+      limit: "5mb",
+      parameterLimit: 500000,
+      extended: false,
+    })
+  );
+
+  app.use(
+    bodyParser.json({
+      limit: "5mb",
+    })
+  );
+
+  app.use(cors());
 
   // Routes
   app.use("/api", quizRoutes);
