@@ -1,6 +1,7 @@
 const express = require("express");
 
 const router = express.Router();
+const { verifyToken } = require("../middlewares/verifyToken");
 
 const {
   createQuiz,
@@ -11,10 +12,10 @@ const {
 } = require("../controllers/quizController");
 
 // Define routes for CRUD operations
-router.post("/quizzes", createQuiz); // Create
-router.get("/quizzes", getQuizzes); // Read all
-router.get("/quizzes/:id", getQuizById); // Read single
-router.put("/quizzes/:id", updateQuiz); // Update
-router.delete("/quizzes/:id", deleteQuiz); // Delete
+router.post("/quizzes", verifyToken, createQuiz); // Create
+router.get("/quizzes", verifyToken, getQuizzes); // Read all
+router.get("/quizzes/:id", verifyToken, getQuizById); // Read single
+router.put("/quizzes/:id", verifyToken, updateQuiz); // Update
+router.delete("/quizzes/:id", verifyToken, deleteQuiz); // Delete
 
 module.exports = router;

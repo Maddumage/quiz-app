@@ -8,19 +8,20 @@ export default function Home() {
 
   useEffect(() => {
     fetchQuizzes();
+    fetchData();
   }, []);
 
-  // const fetchQuizzes = async () => {
-  //   const url = "http://localhost:5000/api/quizzes";
-  //   try {
-  //     const response = await fetch(url);
-  //     const result = await response.json();
-  //     setQuizzes(result.data);
-  //     console.log("Success:", result);
-  //   } catch (error: any) {
-  //     console.error(error.message);
-  //   }
-  // };
+  const fetchData = async () => {
+    const url = "http://localhost:5000/api/quizzes";
+    try {
+      const response = await fetch(url);
+      const result = await response.json();
+      console.log("Success:", result);
+      // setQuizzes(result.data);
+    } catch (error: any) {
+      console.error(error.message);
+    }
+  };
 
   const fetchQuizzes = async () => {
     try {
@@ -52,6 +53,7 @@ export default function Home() {
           </div>
         ))}
       </div>
+      <div></div>
     </div>
   );
 }
